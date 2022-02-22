@@ -15,7 +15,8 @@ const UserSchema = new Schema({
     password: {
         type: String,
         minlength: 5
-    }
+    },
+    profile_image: String
 }, { timestamps: true, versionKey: false })
 
 UserSchema.post("save", (doc) => {

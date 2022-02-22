@@ -24,7 +24,7 @@ exports.login = async (req, res) => {
     req.body.password = passwordToHash(req.body.password)
     loginUser(req.body)
         .then((user) => {
-            if (!user) return res.status(httpStatus.NOT_FOUND).send({ message: "Böyle bir kullanıcı bulunmamaktadır." })
+            if (!user) return res.status(httpStatus.NOT_FOUND).send({ message: "User not found." })
 
             user = {
                 ...user.toObject(),
